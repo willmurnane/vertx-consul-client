@@ -268,7 +268,7 @@ public class ConsulClientImpl implements ConsulClient {
 
   @Override
   public Future<String> createAclToken(AclToken token) {
-    return requestObject(HttpMethod.PUT, "/v1/acl/create", null, token.toJson().encode(), (obj, headers) ->
+    return requestObject(HttpMethod.PUT, "/v1/acl/token", null, token.toJson().encode(), (obj, headers) ->
       obj.getString("ID"));
   }
 
